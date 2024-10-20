@@ -5,7 +5,7 @@ const inputFields = [];
 let lastKeyWasBackspace = false;
 
 segments.forEach((length, index) => {
-    const segmentContainer = document.createElement("div");
+    //const segmentContainer = document.createElement("div");
     //segmentContainer.classList.add("d-flex", "gap-2");
 
     for (let i = 0; i < length; i++) {
@@ -16,11 +16,11 @@ segments.forEach((length, index) => {
         input.inputMode = "numeric"; // Számbillentyűzet mobilon
         input.dataset.segment = index;
         input.dataset.indexInSegment = i;
-        segmentContainer.appendChild(input);
+        //segmentContainer.appendChild(input);
         inputFields.push(input);
     }
 
-    container.appendChild(segmentContainer);
+    //container.appendChild(segmentContainer);
 });
 
 inputFields.forEach((input, index) => {
