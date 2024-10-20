@@ -3,17 +3,22 @@ body {
     margin: 0;
 }
 
-.input-group input {
-    background-color: #001f7f; /* sötétkék háttér */
-    color: #ffffff; /* fehér betűszín */
-}
-
 input[type="text"] {
     width: 40px;
     height: 40px;
     text-align: center;
     font-size: 18px;
     margin: 0;
+    background-color: #ffffff; /* Alapértelmezett fehér háttér */
+    color: #000000; /* Alapértelmezett fekete szöveg */
+}
+
+.ddd input,
+.eee input {
+    background-color: #001f7f; /* sötétkék háttér */
+    color: #ffffff; /* fehér betűszín */
+    padding: 0; /* Padding eltávolítása */
+    margin: 0; /* Margin eltávolítása */
 }
 
 .button-group {
