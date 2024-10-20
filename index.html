@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIC Pályaszámok</title>
+    <title>Vonat Pályaszám Ellenőrző</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -17,14 +17,19 @@
             height: 40px;
             text-align: center;
             font-size: 18px;
+            padding: 0;
+            margin: 0;
         }
         @media (max-width: 768px) {
             .aa-bb, .c, .ddd, .eee, .f {
                 gap: 0px; /* Térköz eltávolítása mobilnézetben */
             }
             input[type="text"] {
-                width: 30px;
-                height: 30px;
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+                padding: 0;
+                margin: 0;
             }
             .button-group {
                 display: flex;
@@ -33,13 +38,17 @@
                 margin-top: 10px;
             }
         }
+        .input-group {
+            display: flex;
+            gap: 2px;
+        }
     </style>
 </head>
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">UIC Pályaszám</h1>
         <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
-            <div id="container" class="d-flex gap-3">
+            <div id="container" class="d-flex gap-3 input-group">
                 <!-- AA BB C DDD EEE F -->
                 <div class="aa-bb d-flex gap-2"></div>
                 <div class="c d-flex gap-2"></div>
@@ -83,6 +92,8 @@
                     input.style.backgroundColor = "#001f7f"; // sötétkék háttér
                     input.style.color = "#ffffff"; // fehér betűszín
                 }
+                input.style.padding = '0'; // padding eltávolítása
+                input.style.margin = '0'; // margin eltávolítása
                 segmentContainer.appendChild(input);
                 inputFields.push(input);
             }
@@ -232,9 +243,84 @@
             }
 
             const countryCodes = {
-                "55": "Magyarország",
-                "80": "Németország"
+                "06": "StL Holland (Stena Line Holland BV) - NL",
+                "10": "VR (VR-Yhtymä Oy) - FI",
+                "12": "TRFSA (Transfesa Logistics SA) - ES",
+                "13": "OSJD (OSJD) - PL",
+                "14": "CWL (Compagnie des Wagons-Lits) - FR",
+                "15": "RMF (Rail Manche Finance) - GB",
+                "16": "RD (RAILDATA) - CH",
+                "17": "ENS (European Night Services Ltd) - GB",
+                "18": "THI Factory (THI Factory SA) - BE",
+                "19": "Eurostar I (Eurostar International Limited) - GB",
+                "20": "OAO RZD (Joint Stock Company 'Russian Railways') - RU",
+                "21": "BC (Belarusian Railways) - BY",
+                "22": "UZ (Ukrainski Zaliznytsi) - UA",
+                "23": "CFM (Calea Ferată din Moldova) - MD",
+                "24": "LTG (AB 'Lietuvos geležinkeliai') - LT",
+                "25": "LDZ (Latvijas dzelzceļš) - LV",
+                "26": "EVR (Aktsiaselts Eesti Raudtee) - EE",
+                "27": "KTZ (Kazakhstan Temir Zholy) - KZ",
+                "28": "GR (Sakartvelos Rkinigza) - GE",
+                "29": "UTI (Uzbekistan Temir Yullari) - UZ",
+                "30": "ZC (Railways of D.P.R.K.) - KP",
+                "31": "UBTZ (Mongolian-Russian Joint-Stock Company 'Ulaanbaatar railway') - MN",
+                "32": "DSVN (đường sắt Việt Nam) - VN",
+                "33": "CR (Chinese Railways) - CN",
+                "41": "HSH (Hekurudha Shqiptarë SH.A.) - AL",
+                "42": "JR-E (East Japan Railway Company) - ",
+                "43": "GySEV/Raaberbahn (Győr-Sopron-Ebenfurti Vasút Zrt.) - HU",
+                "44": "ŽRS (Željeznice Republike Srpske) - BA",
+                "50": "ŽFBH (J.P. Željeznice Federacije BiH d.o.o.) - BA",
+                "51": "PKP PLK S.A. (PKP Polskie Linie Kolejowe S.A.) - PL",
+                "52": "NRIC (National Railway Infrastructure Company) - BG",
+                "53": "CFR SA (Compania Naţională de Căi Ferate Române) - RO",
+                "54": "SZCZ (Správa železnic, statni organizace) - CZ",
+                "55": "MÁV (Magyar Államvasutak Zrt.) - HU",
+                "56": "ŽSR (Železnice Slovenskej Republiky) - SK",
+                "57": "ADY (Azerbaidjan Railways CJSC) - AZ",
+                "58": "CJSC SCR (South Caucasus Railway CJSC) - AM",
+                "59": "KTJ (Kyrgyz Railways) - KG",
+                "60": "CIE (Córas Iompair Éireann) - IE",
+                "61": "KORAIL (Korea Railroad Corporation) - KR",
+                "63": "BLS N (BLS Netz AG Infrastrukturmanager) - CH",
+                "64": "FN (Ferrovienord S.p.A.) - IT",
+                "65": "CFARYM-I (Makedonski Železnici Infrastructure-Skopje) - MK",
+                "66": "TDZ (Tajikistan Railways) - TJ",
+                "67": "TRK (Turkmenistan Railways) - TM",
+                "68": "AAEC (AAE Ahaus Alstätter Eisenbahn Cargo AG) - ",
+                "69": "EUROT (EUROTUNNEL) - FR",
+                "70": "Network Rail (Network Rail Limited) - GB",
+                "71": "ADIF (Administrator de Infraestructuras Ferroviarias) - ES",
+                "72": "IŽS (Infrastruktura Železnice Srbije) - RS",
+                "73": "OSE (Organismos Sidirodromon Ellados) - GR",
+                "74": "TRAFIKVERKET (Trafikverket) - SE",
+                "75": "TCDD Taşımacılık A.Ş. (Türkiye Cumhuriyeti Devlet Demiryolları Taşımacılık Anonim Şirketi) - TR",
+                "76": "BN (Bane NOR SF) - NO",
+                "77": "FS EPA (Ferrovie dello Stato Italiane SpA EPA) - IT",
+                "78": "HŽ-Infrastruktura (HŽ Infrastruktura d.o.o.) - HR",
+                "79": "SŽ - Infrastruktura, d.o.o. (Slovenske železnice - Infrastruktura, d.o.o.) - SI",
+                "80": "DB InfraGO (DB InfraGO Aktiengesellschaft) - DE",
+                "81": "ÖBB-Holding AG (ÖBB-Holding AG) - AT",
+                "82": "CFL Infrastructure (Societé Nationale des Chemins de Fer Luxembourgeois) - LU",
+                "83": "RFI  (Rete Ferroviaria Italiana SpA) - IT",
+                "84": "ProRail (ProRail) - NL",
+                "85": "SBB Infrastructure  (Swiss Federal Railways - Infrastructure) - CH",
+                "86": "Banedanmark (Banedanmark (RailNet Denmark)) - DK",
+                "87": "SNCF Réseau (SNCF Réseau SA) - FR",
+                "88": "Infrabel (Infrabel) - BE",
+                "90": "ENR (Egyptian National Railways) - EG",
+                "91": "SNCFT (Société Nationale des Chemins de Fer Tunisiens) - TN",
+                "92": "SNTF (Société Nationale des Transports Ferroviaires) - DZ",
+                "93": "ONCF (Office National des Chemins de Fer du Maroc) - MA",
+                "94": "IP (Infraestruturas de Portugal S.A.) - PT",
+                "95": "ISR (Israel Railways) - IL",
+                "96": "RAI (Rahahan-e Djjomhouri-e Eslami Iran) - IR",
+                "97": "CFS (Administration Générale des Chemins de fer Syriens) - SY",
+                "98": "CEL (Lebanon Railways) - LB",
+                "99": "IRR (Iraqi Republic Railways Establishment) - IQ"
             };
+
 
             if (countryCodes[countryCode]) {
                 infoText += `3-4. számjegy: <b>${countryCodes[countryCode]}</b><br>`;
