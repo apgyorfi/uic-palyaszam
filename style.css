@@ -9,9 +9,9 @@ input[type="text"] {
     text-align: center;
     font-size: 18px;
     margin: 0;
-    background-color: #ffffff; /* háttér */
-    color: #000000; /* betűszín */
-    padding: 0; /* Padding eltávolítása */
+    background-color: #ffffff; 
+    color: #000000; 
+    padding: 0; 
     box-sizing: border-box;
 }
 
