@@ -6,7 +6,7 @@ let lastKeyWasBackspace = false;
 
 segments.forEach((length, index) => {
     const segmentContainer = document.createElement("div");
-    segmentContainer.classList.add("d-flex", "gap-2");
+    //segmentContainer.classList.add("d-flex", "gap-2");
 
     for (let i = 0; i < length; i++) {
         const input = document.createElement("input");
