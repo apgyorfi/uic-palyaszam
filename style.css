@@ -9,16 +9,10 @@ input[type="text"] {
     text-align: center;
     font-size: 18px;
     margin: 0;
-    background-color: #ffffff; /* Alapértelmezett fehér háttér */
-    color: #000000; /* Alapértelmezett fekete szöveg */
-}
-
-.ddd input,
-.eee input {
-    background-color: #001f7f; /* sötétkék háttér */
-    color: #ffffff; /* fehér betűszín */
+    background-color: #ffffff; /* háttér */
+    color: #000000; /* betűszín */
     padding: 0; /* Padding eltávolítása */
-    margin: 0; /* Margin eltávolítása */
+    box-sizing: border-box;
 }
 
 .button-group {
